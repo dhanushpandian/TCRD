@@ -1,10 +1,31 @@
 1.copied load_xyz for mondo
 2.obo custom parser file from steve-mathias
 3.created mondo db and mondo table for downloading and saving in db 
- create query: "CREATE TABLE mondo.mondo (
+
+#Queries for table: 
+
+CREATE TABLE mondo.mondo (
     mondoid VARCHAR(255) NOT NULL,
     name VARCHAR(255),
     def TEXT,
     comment TEXT,
     PRIMARY KEY (mondoid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;"
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE mondo.mondo_parent (
+    mondoid VARCHAR(255) NOT NULL,
+    parentid VARCHAR(255) NOT NULL,
+    FOREIGN KEY (mondoid) REFERENCES mondo.mondo(mondoid)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE mondo.mondo_xref (
+    id INT AUTO_INCREMENT,
+    mondoid VARCHAR(255) NOT NULL,
+    db VARCHAR(255),
+    value VARCHAR(255),
+    equiv_to TINYINT,
+    source_info TEXT,
+    did VARCHAR(255),
+    PRIMARY KEY (id),
+    FOREIGN KEY (mondoid) REFERENCES mondo.mondo(mondoid)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
