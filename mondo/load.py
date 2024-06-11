@@ -10,7 +10,7 @@ CONFIG = [{'name': 'Mondo', 'DOWNLOAD_DIR': 'C:/tcrd/',
             'parse_function': 'parse_mondo', 'load_function': 'load_mondo'}]
 
 def download(name):
-    try:
+    try:    
         cfgd = next(d for d in CONFIG if d['name'] == name)
     except StopIteration:
         print(f"No configuration found for {name}")
