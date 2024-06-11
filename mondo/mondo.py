@@ -2,7 +2,7 @@ import os
 import sys
 from urllib.request import urlretrieve
 import mysql.connector
-import tcrd.mondo.obo as obo
+import tcrd.obo as obo
 import chardet  # Ensure chardet is installed: pip install chardet
 
 CONFIG = [{'name': 'Mondo', 'DOWNLOAD_DIR': 'C:/tcrd/', 
