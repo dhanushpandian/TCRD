@@ -1,1 +1,44 @@
-use gwas;
+desc gwas_catalog ;
+
+-- ALTER TABLE gwas_catalog ADD COLUMN ci_95_text TEXT;
+
+ALTER TABLE gwas_catalog CHANGE COLUMN ci_95_text ci_text TEXT;
+
+CREATE TABLE IF NOT EXISTS gwas_catalog (
+    date_added_to_catalog DATE,
+    pubmedid INT,
+    first_author VARCHAR(255),
+    date DATE,
+    journal VARCHAR(255),
+    link VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    study VARCHAR(500), -- Adjusted to VARCHAR with an appropriate length
+    disease_trait VARCHAR(500), -- Adjusted to VARCHAR with an appropriate length
+    initial_sample_size TEXT,
+    replication_sample_size TEXT,
+    region VARCHAR(500), -- Adjusted to VARCHAR with an appropriate length
+    chr_id VARCHAR(20), -- Adjusted to VARCHAR with an appropriate length
+    chr_pos BIGINT, -- Changed to BIGINT for potential large values
+    reported_genes VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    mapped_gene VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    upstream_gene_id VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    downstream_gene_id VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    snp_gene_ids VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    upstream_gene_distance INT,
+    downstream_gene_distance INT,
+    strongest_snp_risk_allele VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    snps VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    merged INT,
+    snp_id_current INT,
+    context VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    intergenic INT,
+    risk_allele_frequency DOUBLE, -- Changed to DOUBLE for better precision
+    p_value DOUBLE, -- Changed to DOUBLE for better precision
+    pvalue_mlog DOUBLE, -- Changed to DOUBLE for better precision
+    p_value_text VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    or_beta DOUBLE, -- Changed to DOUBLE for better precision
+    ci_text VARCHAR(1000), -- Adjusted to VARCHAR with an appropriate length
+    platform VARCHAR(500), -- Adjusted to VARCHAR with an appropriate length
+    cnv VARCHAR(10)
+);
+
+select count(*) from gwas_catalog;
