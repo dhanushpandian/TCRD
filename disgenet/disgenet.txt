@@ -1,0 +1,29 @@
+We cant directlty access the data from disgenet , unless we login .
+so i hav downloaded the 4 file and added a script to load them into our db server.
+
+For Gene-Disease associations: 
+
+disease_associations.tsv.gz 		=> Diseases associated to genes from DisGeNET
+
+The columns in the files are:
+diseaseId 	-> UMLS concept unique identifier
+diseaseName 	-> Name of the disease	
+diseaseType  	-> The DisGeNET disease type: disease, phenotype and group
+diseaseClass	-> The MeSH disease class(es)
+diseaseSemanticType	-> The UMLS Semantic Type(s) of the disease
+NofGenes 	-> Number of genes associated to the disease
+NofPmids	-> Number of publications associated to the disease
+
+
+gene_associations.tsv.gz 		=> Genes associated to Diseases from DisGeNET
+
+The columns in the files are:
+geneId 		-> NCBI Entrez Gene Identifier
+geneSymbol	-> Official Gene Symbol
+DSI		-> The Disease Specificity Index for the gene
+DPI		-> The Disease Pleiotropy Index for the gene
+PLI		-> The probability for the gene of being loss-of-function intolerant, provided by the GNOMAD consortium
+protein_class	-> Protein Class identifier according to the Drug Target Ontology  
+protein_class_name -> Protein Class according to the Drug Target Ontology  
+NofDiseases	-> Number of diseases associated to the gene
+NofPmids	-> Number of publications associated to the gene

@@ -1,0 +1,23 @@
+use desgenet; //change database
+
+CREATE TABLE IF NOT EXISTS disease_associations (
+    diseaseId VARCHAR(50),
+    diseaseName VARCHAR(255),
+    diseaseType VARCHAR(50),
+    diseaseClass VARCHAR(255),
+    diseaseSemanticType VARCHAR(255),
+    NofGenes INT,
+    NofPmids INT
+);
+
+CREATE TABLE IF NOT EXISTS gene_associations (
+    geneId INT,
+    geneSymbol VARCHAR(50),
+    DSI FLOAT,
+    DPI FLOAT,
+    PLI FLOAT,
+    protein_class_name VARCHAR(255),
+    protein_class VARCHAR(50),
+    NofDiseases INT,
+    NofPmids INT
+);
