@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knowledge Platform Comparison</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-5">Knowledge Platform Comparison</h1>
+    
+    <p>It is impossible to provide a webpage that visually differentiates the implementations and highlights the database schema and DB structures of the four sources, as the sources provide limited information on the database technologies used by AbbVie, Standigm ASK, and TCRD. However, a comparative study of the implementations and database information that is available can be provided.</p>
+    
+    <h2>Comparative Study of Knowledge Platforms for Clinical Research</h2>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>BIKG</th>
+                <th>AbbVie</th>
+                <th>Standigm ASK</th>
+                <th>TCRD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Focus</td>
+                <td>Comprehensive drug discovery platform.</td>
+                <td>Drug repurposing and target prioritization using genomically-informed subgraphs.</td>
+                <td>Identifying novel target genes for diseases.</td>
+                <td>Aggregating information on protein targets, with an emphasis on understudied proteins.</td>
+            </tr>
+            <tr>
+                <td>Schema</td>
+                <td>Employs an Upper-Level Ontology (ULO) for data unification from diverse sources, prioritizing signal propagation for machine learning.</td>
+                <td>Focuses on subgraphs linking drugs to diseases via genes, with or without genetic evidence.</td>
+                <td>Leverages a heterogeneous KG connecting multimodal data and prioritizes targets using five criteria: biological relevance, disease causality, druggability, toxicity, and novelty.</td>
+                <td>Based on 'reviewed' (manually curated) human protein entries from UniProt. Data is organized using the Target Development Level (TDL) scheme, categorizing targets based on their level of development, and the Drug Target Ontology (DTO) for a formal classification and annotation of protein families.</td>
+            </tr>
+            <tr>
+                <td>Database Structure</td>
+                <td>Columnar data model using Parquet files, employing Spark for processing and Azure Blob storage for security. Offers BIKG, BROWSER, RDF, and Neo4j projections for varied user needs.</td>
+                <td>Hybrid approach combining a graph database with SOLR for text and BigQuery for structured data, interconnected for comprehensive analysis.</td>
+                <td>Specific database technology not mentioned, but emphasizes data quality and documentation, comparing itself to HetioNet, DRKG, BioKG, PharmKG, OpenBioLink, and Clinical Knowledge Graph.</td>
+                <td>Utilizes TCRD as the database and Pharos as the web interface for accessing and visualizing data. TCRD integrates data from various sources related to human genes and proteins.</td>
+            </tr>
+            <tr>
+                <td>Implementation</td>
+                <td>Focuses on a unified data model and flexibility, enabling user contributions and quick feedback incorporation. Employs a cloud-based pipeline for scalability.</td>
+                <td>Leverages NLP techniques like NER, BAR, SRQ, and CEC to extract information and build its knowledge graph.</td>
+                <td>Employs QuatE as the Knowledge Graph Embedding (KGE) model and utilizes metapaths to learn associations between nodes.</td>
+                <td>Provides a REST API for programmatic access and a web interface with features like free text search, sequence similarity search, batch search, data visualization, target ranking, target comparison, and target dossiers for a user-friendly experience.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Key Differences:</h3>
+    <ul>
+        <li><strong>Scope and Purpose:</strong> Each platform has a specific area of focus within drug discovery. BIKG aims for comprehensiveness, AbbVie emphasizes drug repurposing, Standigm ASK concentrates on target identification, and TCRD prioritizes understudied proteins.</li>
+        <li><strong>Schema Design:</strong> BIKG leverages a ULO for unified representation, AbbVie focuses on specific subgraph patterns, Standigm ASK uses a five-criteria system for target prioritization, and TCRD employs TDL and DTO for classification.</li>
+        <li><strong>Database Specifics:</strong> BIKG provides detailed information on its data model and technologies. AbbVie outlines a hybrid architecture. Standigm ASK focuses on data quality without specifying technology. TCRD's database specifics are not elaborated upon.</li>
+    </ul>
+    
+    <p><strong>Note:</strong> This analysis relies on the information available in the provided sources. Further research into the individual platforms is recommended for a complete and up-to-date understanding.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
