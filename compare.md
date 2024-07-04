@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Natural Language Processing (NLP) in biomedical literature is crucial for identifying biological entities and extracting relations from structured and unstructured text. This comparative study analyzes three knowledge platforms: Abbvie ARCH, Platform 2, and Platform 3, focusing on their implementation and working mechanisms.
+Natural Language Processing (NLP) in biomedical literature is crucial for identifying biological entities and extracting relations from structured and unstructured text. This comparative study analyzes three knowledge platforms: Abbvie ARCH, BIKG, and Standigm ASK, focusing on their implementation and working mechanisms.
 
 ## Abbvie ARCH
 
@@ -48,10 +48,10 @@ Abbvie ARCH uses NLP to extract associations between chemicals/drugs, target gen
 ### Conclusion
 Abbvie ARCH demonstrates the potential of using a 911M edge knowledge graph for drug repurposing, emphasizing the role of NLP in enriching the knowledge graph with insights from unstructured biomedical text.
 
-## Platform 2
+## BIKG
 
 ### Overview
-Platform 2 focuses on a different approach, leveraging deep learning models for entity recognition and relation extraction from biomedical literature.
+BIKG focuses on a different approach, leveraging deep learning models for entity recognition and relation extraction from biomedical literature.
 
 ### Methodology
 1. **Deep Learning Models**:
@@ -80,12 +80,12 @@ Platform 2 focuses on a different approach, leveraging deep learning models for 
   - Examines potential drug interactions and side effects by correlating data from multiple sources.
 
 ### Conclusion
-Platform 2 showcases the effectiveness of deep learning models in biomedical NLP, enhancing the integration of structured and unstructured data for comprehensive analysis.
+BIKG showcases the effectiveness of deep learning models in biomedical NLP, enhancing the integration of structured and unstructured data for comprehensive analysis.
 
-## Platform 3
+## Standigm ASK
 
 ### Overview
-Platform 3 employs a hybrid approach, combining rule-based systems with machine learning for text mining and knowledge extraction.
+Standigm ASK employs a hybrid approach, combining rule-based systems with machine learning for text mining and knowledge extraction.
 
 ### Methodology
 1. **Rule-Based Systems**:
@@ -114,11 +114,11 @@ Platform 3 employs a hybrid approach, combining rule-based systems with machine 
   - Maps diseases to genetic and molecular pathways for better understanding of disease mechanisms.
 
 ### Conclusion
-Platform 3 demonstrates the utility of a hybrid approach in biomedical NLP, leveraging both rule-based systems and machine learning for robust knowledge extraction.
+Standigm ASK demonstrates the utility of a hybrid approach in biomedical NLP, leveraging both rule-based systems and machine learning for robust knowledge extraction.
 
 ## Comparative Analysis
 
-| Feature/Aspect              | Abbvie ARCH                      | Platform 2                               | Platform 3                           |
+| Feature/Aspect              | Abbvie ARCH                      | BIKG                                    | Standigm ASK                         |
 |-----------------------------|----------------------------------|-----------------------------------------|--------------------------------------|
 | **Approach**                | NLP with subgraph pattern matching | Deep learning models                     | Hybrid rule-based and machine learning|
 | **Entity Recognition**      | NER, BAR, SRQ, CEC               | BERT-based models                        | Rule-based initial recognition       |
@@ -131,4 +131,4 @@ Platform 3 demonstrates the utility of a hybrid approach in biomedical NLP, leve
 
 ## Conclusion
 
-Each platform presents unique strengths and challenges in the realm of biomedical NLP. Abbvie ARCH excels in enriching drug-disease associations through subgraph pattern matching, Platform 2 leverages deep learning for precise entity recognition, and Platform 3 employs a hybrid approach for robust knowledge extraction. Together, these platforms showcase the diverse methodologies driving advancements in biomedical research and drug discovery.
+Each platform presents unique strengths and challenges in the realm of biomedical NLP. Abbvie ARCH excels in enriching drug-disease associations through subgraph pattern matching, BIKG leverages deep learning for precise entity recognition, and Standigm ASK employs a hybrid approach for robust knowledge extraction. Together, these platforms showcase the diverse methodologies driving advancements in biomedical research and drug discovery.
