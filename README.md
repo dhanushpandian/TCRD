@@ -2,7 +2,7 @@
 
 This project provides a comprehensive comparison of knowledge platforms for clinical research, focusing on the Target Central Resource Database (TCRD) and its features in relation to other platforms.
 
-## File Links
+## Detailed Explainations: 
 
 - [Comparison Overview](https://dhanushpandian.github.io/TCRD/compare/index.html)
 - [Comparison Table](https://dhanushpandian.github.io/TCRD/compare/table.html)
