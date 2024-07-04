@@ -1,39 +1,31 @@
-import pandas as pd
-from sqlalchemy import create_engine
+import mysql.connector
 
-# MySQL database configuration
-db_username = 'your_username'
-db_password = 'your_password'
-db_host = 'localhost'  # or your MySQL server IP
-db_name = 'your_database_name'
+# Database connection parameters
+dbhost = 'localhost'
+dbname = 'tcrdev'
+dbuser = 'root'
+pwfile = './tcrd_pass'
 
-# Create SQLAlchemy engine to connect to MySQL Database
-engine = create_engine(f'mysql+pymysql://{db_username}:{db_password}@{db_host}/{db_name}')
+# Read database password from file
+with open(pwfile, 'r') as file:
+    dbpassword = file.read().strip()
 
-# Function to import CSV to MySQL
-def import_csv_to_mysql(csv_file, table_name):
-    try:
-        # Read CSV file into pandas DataFrame
-        df = pd.read_csv(csv_file)
+# Connect to the database
+cnx = mysql.connector.connect(user=dbuser, password=dbpassword, host=dbhost, database=dbname)
+cursor = cnx.cursor()
 
-        # Remove existing table from database (if exists)
-        engine.execute(f'DROP TABLE IF EXISTS {table_name}')
+# SQL query to alter the table schema
+alter_query = """
+ALTER TABLE uberon_main_with_mesh_umls
+MODIFY main_uberon_id VARCHAR(50),
+MODIFY mesh_ids VARCHAR(256),
+MODIFY umls_ids VARCHAR(512);
+"""
 
-        # Write DataFrame to MySQL
-        df.to_sql(table_name, con=engine, index=False)
+# Execute the query
+cursor.execute(alter_query)
 
-        print(f"CSV file '{csv_file}' imported successfully into MySQL table '{table_name}'.")
-
-    except Exception as e:
-        print(f"Error occurred: {str(e)}")
-
-if __name__ == "__main__":
-    # CSV files to import
-    csv_files = {
-        'uberon_main_with_children.csv': 'uberon_main_with_children',
-        'uberon_main_with_mesh_umls.csv': 'uberon_main_with_mesh_umls'
-    }
-
-    # Import each CSV file into MySQL
-    for csv_file, table_name in csv_files.items():
-        import_csv_to_mysql(csv_file, table_name)
+# Commit the changes and close the connection
+cnx.commit()
+cursor.close()
+cnx.close()
