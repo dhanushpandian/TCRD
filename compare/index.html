@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparative Study of Knowledge Platforms for Clinical Research</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .chart-container {
+            width: 50%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Comparative Study of Knowledge Platforms for Clinical Research</h1>
+
+<p>This comparative study analyses the databases and implementation methods of four knowledge platforms for clinical research:</p>
+<ul>
+    <li><strong>BIKG (Biological Insights Knowledge Graph):</strong> Developed by AstraZeneca.</li>
+    <li><strong>TCRD (Target Central Resource Database) and Pharos:</strong> Products of the Illuminating the Druggable Genome (IDG) project, an NIH initiative.</li>
+    <li><strong>Standigm ASK:</strong> Developed by Standigm.</li>
+    <li><strong>AbbVie's Knowledge Graph:</strong> Details are provided in a research paper from AbbVie.</li>
+</ul>
+
+<h2>Database Architectures</h2>
+
+<ul>
+    <li><strong>BIKG:</strong> Utilizes a hybrid database approach. The graph database technology is not specified in the source. It employs SOLR for text and BigQuery for structured data. This interconnected system links insights from subgraph analysis to source text and clinical trial data.</li>
+    <li><strong>TCRD:</strong> Sources do not explicitly state the database technology used. However, TCRD integrates data from 79 sources. It emphasizes data quality and documentation to ensure consistency and reliability across diverse datasets.</li>
+    <li><strong>Standigm ASK:</strong> The specific database technology is not explicitly mentioned in the source. Standigm ASK prioritizes data quality and documentation, drawing comparisons with other KGs like HetioNet, DRKG, BioKG, PharmKG, OpenBioLink, and Clinical Knowledge Graph in terms of information content and documentation quality.</li>
+    <li><strong>AbbVie:</strong> Leverages a hybrid database architecture combining graph databases, text format, and structured format data. This architecture allows for linking insights from subgraph analysis to source text (literature and patents) and comparisons with structured clinical trial data.</li>
+</ul>
+
+<h2>Implementation Methods</h2>
+
+<ul>
+    <li><strong>Data Sources and Integration:</strong>
+        <ul>
+            <li>All four platforms rely on integrating data from multiple public and proprietary sources, including databases like ChEMBL, Ensembl, and Mondo; full-text publications; and internal experimental data.</li>
+            <li>They employ entity recognition and resolution techniques to harmonize data from these diverse sources, mapping entities to standard ontologies like Uberon and Gene Ontology.</li>
+            <li><strong>BIKG:</strong> Uses ChEMBL identifiers as canonical for drug compounds, extending them with external (PubChem) and internal identifiers.</li>
+            <li><strong>TCRD:</strong> Harmonizes identifiers for targets, diseases, and ligands across its data sources.</li>
+            <li><strong>AbbVie:</strong> Harmonizes data from various public sources (both structured and unstructured) to common ontologies.</li>
+        </ul>
+    </li>
+    <li><strong>Knowledge Representation:</strong>
+        <ul>
+            <li>All platforms employ a knowledge graph structure, representing biological entities and relationships as nodes and edges.</li>
+            <li><strong>BIKG:</strong> Utilizes an Upper-Level Ontology (ULO) designed to unify data from various sources and prioritize signal propagation for machine learning.</li>
+            <li><strong>Standigm ASK:</strong> Leverages heterogeneous KGs connecting multimodal data and employs metapaths to discover associations between nodes.</li>
+            <li><strong>AbbVie:</strong> Focuses on specific subgraph patterns, particularly for representing drug-disease relationships.</li>
+        </ul>
+    </li>
+    <li><strong>Data Analysis and Hypothesis Generation:</strong>
+        <ul>
+            <li>All platforms are designed to support machine learning applications for drug discovery tasks. They provide tools for data analysis, visualization, and hypothesis generation.</li>
+            <li><strong>BIKG:</strong> Used for target identification and CRISPR recommendations, leveraging both internal and external data to train machine learning algorithms.</li>
+            <li><strong>TCRD/Pharos:</strong> Offers enrichment calculations, interactive heatmaps, and UpSet charts for analyzing subsets of targets, diseases, or ligands.</li>
+            <li><strong>Standigm ASK:</strong> Prioritizes target genes using a five-criteria system considering biological relevance, disease causality, druggability, toxicity, and novelty. It uses QuatE as the Knowledge Graph Embedding (KGE) model.</li>
+            <li><strong>AbbVie:</strong> Focuses on identifying drug-disease associations supported by genomic evidence.</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Summary</h2>
+
+<p>While all four platforms share a common goal of leveraging knowledge graphs for drug discovery, they exhibit differences in their database architectures, data integration approaches, knowledge representation schemas, and specific areas of focus. The table below summarizes these key differences:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>BIKG</th>
+            <th>TCRD/Pharos</th>
+            <th>Standigm ASK</th>
+            <th>AbbVie</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Focus</td>
+            <td>Comprehensive drug discovery</td>
+            <td>Illuminating the druggable genome; Target validation and prioritization</td>
+            <td>Identifying novel target genes for diseases</td>
+            <td>Drug repurposing and target prioritization with genomic evidence</td>
+        </tr>
+        <tr>
+            <td>Schema</td>
+            <td>Upper-Level Ontology (ULO) for unified representation</td>
+            <td>Leverages ontologies like Uberon and Gene Ontology; Data quality and documentation emphasized</td>
+            <td>Heterogeneous KG; Metapaths for relationship discovery</td>
+            <td>Focus on drug-disease relationship subgraphs</td>
+        </tr>
+        <tr>
+            <td>Database</td>
+            <td>Hybrid (graph database, SOLR, BigQuery)</td>
+            <td>Not specified, but integrates 79 data sources</td>
+            <td>Not specified, but emphasizes data quality and documentation</td>
+            <td>Hybrid (graph database, text format, structured format)</td>
+        </tr>
+        <tr>
+            <td>Key Features</td>
+            <td>Integration of internal data; Custom subgraph extraction</td>
+            <td>Target Development Levels (TDLs); Enrichment calculations; Interactive heatmaps and UpSet charts; Integration of Mondo Disease Ontology</td>
+            <td>Prioritizes targets based on five criteria; QuatE for Knowledge Graph Embedding</td>
+            <td>Genomically-informed subgraph analysis; Focus on genomic evidence for drug-disease associations</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="chart-container">
+    <canvas id="databaseChart"></canvas>
+</div>
+<div class="chart-container">
+    <canvas id="focusChart"></canvas>
+</div>
+<div class="chart-container">
+    <canvas id="featuresChart"></canvas>
+</div>
+
+<script>
+    const databaseData = {
+        labels: ['BIKG', 'TCRD/Pharos', 'Standigm ASK', 'AbbVie'],
+        datasets: [{
+            label: 'Database Architecture',
+            data: [4, 3, 3, 4],  // Arbitrary values for visual representation
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+            borderWidth: 1
+        }]
+    };
+
+    const focusData = {
+        labels: ['BIKG', 'TCRD/Pharos', 'Standigm ASK', 'AbbVie'],
+        datasets: [{
+            label: 'Platform Focus',
+            data: [5, 4, 4, 5],  // Arbitrary values for visual representation
+            backgroundColor: ['rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+            borderColor: ['rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+            borderWidth: 1
+        }]
+    };
+
+    const featuresData = {
+        labels: ['BIKG', 'TCRD/Pharos', 'Standigm ASK', 'AbbVie'],
+        datasets: [{
+            label: 'Key Features',
+            data: [4, 5, 4, 5],  // Arbitrary values for visual representation
+            backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 206, 86, 1)'],
+            borderWidth: 1
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: {},
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    const databaseChart = new Chart(
+        document.getElementById('databaseChart'),
+        { ...config, data: databaseData }
+    );
+
+    const focusChart = new Chart(
+        document.getElementById('focusChart'),
+        { ...config, data: focusData }
+    );
+
+    const featuresChart = new Chart(
+        document.getElementById('featuresChart'),
+        { ...config, data: featuresData }
+    );
+</script>
+
+</body>
+</html>
