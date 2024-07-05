@@ -30,6 +30,10 @@ The TCRD project aims to aggregate and provide detailed information on protein t
 - **Schema Design:** Unified representation using ontologies, subgraph patterns, or criteria-based prioritization systems.
 - **Database Specifics:** Detailed information on data models and technologies varies, with some platforms emphasizing data quality and others providing specific technological details.
 
+## Report
+- [final report -6 min read](https://dhanushpandian.github.io/TCRD/compare/report.html)
+
+
 ## Acknowledgments
 
 - Contributions from the research teams and developers of BIKG, AbbVie, Standigm ASK, and TCRD.
