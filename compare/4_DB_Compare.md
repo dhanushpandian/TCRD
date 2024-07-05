@@ -5,7 +5,7 @@ This comparative study analyses the databases and implementation methods of four
 *   **BIKG (Biological Insights Knowledge Graph):** Developed by AstraZeneca.
 *   **TCRD (Target Central Resource Database) and Pharos:** Products of the Illuminating the Druggable Genome (IDG) project, an NIH initiative.
 *   **Standigm ASK:** Developed by Standigm.
-*   **AbbVie's Knowledge Graph (Name not specified):** Details are provided in a research paper from AbbVie. 
+*   **AbbVie's Knowledge Graph ARCH:** Details are provided in a research paper from AbbVie. 
 
 ### Database Architectures
 
@@ -36,13 +36,4 @@ This comparative study analyses the databases and implementation methods of four
 
 ### Summary
 
-While all four platforms share a common goal of leveraging knowledge graphs for drug discovery, they exhibit differences in their database architectures, data integration approaches, knowledge representation schemas, and specific areas of focus. The table below summarizes these key differences:
-
-| Feature | BIKG                                                                             | TCRD/Pharos                                                                                                                                                     | Standigm ASK                                                                                            | AbbVie                                                                                      |
-| :------- | :------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| **Focus** | Comprehensive drug discovery                                                | Illuminating the druggable genome; Target validation and prioritization                                                                                        | Identifying novel target genes for diseases                                                                 | Drug repurposing and target prioritization with genomic evidence                            |
-| **Schema** | Upper-Level Ontology (ULO) for unified representation                         | Leverages ontologies like Uberon and Gene Ontology; Data quality and documentation emphasized                                                                         | Heterogeneous KG; Metapaths for relationship discovery                                                 | Focus on drug-disease relationship subgraphs                                                    |
-| **Database** | Hybrid (graph database, SOLR, BigQuery)                                      | Not specified, but integrates 79 data sources                                                                                                                | Not specified, but emphasizes data quality and documentation                                                | Hybrid (graph database, text format, structured format)                                        |
-| **Key Features** |  Integration of internal data; Custom subgraph extraction                    | Target Development Levels (TDLs); Enrichment calculations;  Interactive heatmaps and UpSet charts;  Integration of Mondo Disease Ontology                    | Prioritizes targets based on five criteria;  QuatE for Knowledge Graph Embedding                         | Genomically-informed subgraph analysis; Focus on genomic evidence for drug-disease associations |
-
-**Note:** This analysis relies solely on the information provided in the sources. Additional information may be available in the original research papers or on the platforms' websites.
+While all four platforms share a common goal of leveraging knowledge graphs for drug discovery, they exhibit differences in their database architectures, data integration approaches, knowledge representation schemas, and specific areas of focus. 
