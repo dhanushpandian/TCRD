@@ -8,6 +8,12 @@ This project provides a comprehensive comparison of knowledge platforms for clin
 - [Comparison Table](https://dhanushpandian.github.io/TCRD/compare/table.html)
 - [4 Database Comparison](https://dhanushpandian.github.io/TCRD/compare/4_DB_Compare.html)
 
+## Usefull Links:
+
+- [TCRD progress](https://docs.google.com/spreadsheets/d/1lHajdQEFe-Tqtb06MkMzuhs1mJEMd9iX4bXGAIwxQqg/edit?gid=2030364020#gid=2030364020)
+- [Rose Task 1 Doc](https://docs.google.com/document/d/1Z7DojIG_4ELQAve62FhnVYkhCtBJvYUWTjLm2-uCVFo/edit)
+- [Load File explaination](https://docs.google.com/document/d/1lBVvfOIbYvxxcHqPaAJ0Hz9hatzJWtUvFIepI8PIg6Y/edit)
+
 ## Overview
 
 The TCRD project aims to aggregate and provide detailed information on protein targets, with a particular emphasis on understudied proteins. This repository includes a detailed comparative study of the implementations and database structures of four different knowledge platforms used in clinical research:
