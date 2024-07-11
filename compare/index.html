@@ -110,79 +110,24 @@
             </tr>
         </tbody>
     </table>
+    <br><br>
+        <div style="text-align: center;">
 
-    <div class="chart-container">
-        <canvas id="databaseChart"></canvas>
-    </div>
-    <div class="chart-container">
-        <canvas id="focusChart"></canvas>
-    </div>
-    <div class="chart-container">
-        <canvas id="featuresChart"></canvas>
-    </div>
-</div>
-
-<script>
-    const databaseData = {
-        labels: ['BIKG', 'TCRD/Pharos', 'Standigm ASK', 'AbbVie'],
-        datasets: [{
-            label: 'Database Architecture',
-            data: [4, 3, 3, 4],  // Arbitrary values for visual representation
-            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
-            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
-            borderWidth: 1
-        }]
-    };
-
-    const focusData = {
-        labels: ['BIKG', 'TCRD/Pharos', 'Standigm ASK', 'AbbVie'],
-        datasets: [{
-            label: 'Platform Focus',
-            data: [5, 4, 4, 5],  // Arbitrary values for visual representation
-            backgroundColor: ['rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-            borderColor: ['rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-            borderWidth: 1
-        }]
-    };
-
-    const featuresData = {
-        labels: ['BIKG', 'TCRD/Pharos', 'Standigm ASK', 'AbbVie'],
-        datasets: [{
-            label: 'Key Features',
-            data: [4, 5, 4, 5],  // Arbitrary values for visual representation
-            backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 206, 86, 1)'],
-            borderWidth: 1
-        }]
-    };
-
-    const config = {
-        type: 'bar',
-        data: {},
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    };
-
-    const databaseChart = new Chart(
-        document.getElementById('databaseChart'),
-        { ...config, data: databaseData }
-    );
-
-    const focusChart = new Chart(
-        document.getElementById('focusChart'),
-        { ...config, data: focusData }
-    );
-
-    const featuresChart = new Chart(
-        document.getElementById('featuresChart'),
-        { ...config, data: featuresData }
-    );
-</script>
+        
+                <h2>ABBVIE's ARCH:</h2>
+                <br>
+                <img src="Screenshot 2024-07-11 144107.png" alt="" class="img-thumbnail" style="width: 50%;">
+                <hr>
+                <br>
+                <h2>BIKG: </h2>
+                <br>
+                <img src="Screenshot 2024-07-11 144134.png" alt="" class="img-thumbnail" style="width: 100%;">
+                <hr>
+                <br>    
+                <h2>Standigm ASK: </h2>
+                <br>
+                <img src="Screenshot 2024-07-11 144212.png" alt="" class="img-thumbnail" style="width: 100%;">
+            </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
